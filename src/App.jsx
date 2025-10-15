@@ -20,23 +20,59 @@ const PersonaJourneyMap = () => {
   const currentPersona = personas[selectedPersona];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
-      <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
-        <h1 className="text-3xl font-bold text-slate-800 mb-2">Mortgage Persona Journey Maps</h1>
-        <p className="text-slate-600">Strategic OOH ad placement based on daily customer routines</p>
+    <div className="w-full min-h-screen bg-gradient-to-br from-[#1a1f29] via-[#1d222b] to-[#0c1a3a]">
+      {/* Rebel iQ Header with Logo */}
+      <div className="bg-gradient-to-r from-[#021964] to-[#0c39c8] border-b-2 border-[#375CFB] shadow-xl">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img
+              src="https://rebeliq.com/wp-content/uploads/2024/04/rebel-iQ-logo-light.svg"
+              alt="Rebel iQ"
+              className="h-8"
+            />
+            <div className="h-8 w-px bg-white/30"></div>
+            <h1 className="text-xl font-bold text-white">Mortgage Persona Journey Maps</h1>
+          </div>
+          <div className="flex items-center gap-2 bg-[#FFC238]/20 px-3 py-1 rounded-full border border-[#FFC238]/50">
+            <svg className="w-4 h-4 text-[#FFC238]" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+            </svg>
+            <span className="text-xs font-semibold text-[#FFC238]">CONFIDENTIAL</span>
+          </div>
+        </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-        <label className="block text-sm font-semibold text-slate-700 mb-3">Select Mortgage Product:</label>
+      {/* Confidential Notice */}
+      <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="bg-gradient-to-r from-[#FF6633]/10 to-[#FFC238]/10 border border-[#FFC238]/30 rounded-lg p-4 mb-6">
+          <div className="flex items-start gap-3">
+            <svg className="w-5 h-5 text-[#FFC238] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <h3 className="text-sm font-bold text-white mb-1">Internal Use Only - Rebel iQ Proprietary Information</h3>
+              <p className="text-xs text-gray-300">This document contains confidential customer strategy information. Not for external distribution. © {new Date().getFullYear()} Rebel iQ. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 pb-6">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-8 mb-6">
+          <p className="text-gray-300 text-center">Strategic OOH ad placement based on daily customer routines</p>
+        </div>
+
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-6 mb-6">
+        <label className="block text-sm font-semibold text-white mb-3">Select Mortgage Product:</label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {Object.keys(personas).map((key) => (
             <button
               key={key}
               onClick={() => setSelectedPersona(key)}
-              className={`p-3 rounded-lg font-medium transition-all ${
+              className={`p-3 rounded-xl font-semibold transition-all ${
                 selectedPersona === key
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  ? 'bg-gradient-to-r from-[#375CFB] to-[#0c39c8] text-white shadow-lg shadow-[#375CFB]/30'
+                  : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
               }`}
             >
               {personas[key].name}
@@ -45,47 +81,47 @@ const PersonaJourneyMap = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
-        <div className="border-l-4 border-blue-600 pl-6 mb-6">
-          <h2 className="text-2xl font-bold text-slate-800 mb-2">{currentPersona.name}</h2>
-          <p className="text-lg text-blue-600 font-semibold mb-4">{currentPersona.product}</p>
-          <div className="bg-blue-50 p-4 rounded-lg mb-4">
-            <p className="text-slate-700 italic">{currentPersona.persona}</p>
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-8 mb-6">
+        <div className="border-l-4 border-[#375CFB] pl-6 mb-6">
+          <h2 className="text-2xl font-bold text-white mb-2">{currentPersona.name}</h2>
+          <p className="text-lg text-[#FFC238] font-semibold mb-4">{currentPersona.product}</p>
+          <div className="bg-[#375CFB]/10 border border-[#375CFB]/30 p-4 rounded-xl mb-4">
+            <p className="text-gray-200 italic">{currentPersona.persona}</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div>
-            <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
-              <Target className="w-5 h-5 text-blue-600" />
+            <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+              <Target className="w-5 h-5 text-[#375CFB]" />
               Profile
             </h3>
             <div className="space-y-2 text-sm">
               <div className="flex gap-2">
-                <span className="font-semibold text-slate-600 min-w-24">Age:</span>
-                <span className="text-slate-800">{currentPersona.profile.age}</span>
+                <span className="font-semibold text-gray-400 min-w-24">Age:</span>
+                <span className="text-gray-200">{currentPersona.profile.age}</span>
               </div>
               <div className="flex gap-2">
-                <span className="font-semibold text-slate-600 min-w-24">Income:</span>
-                <span className="text-slate-800">{currentPersona.profile.income}</span>
+                <span className="font-semibold text-gray-400 min-w-24">Income:</span>
+                <span className="text-gray-200">{currentPersona.profile.income}</span>
               </div>
               <div className="flex gap-2">
-                <span className="font-semibold text-slate-600 min-w-24">Employment:</span>
-                <span className="text-slate-800">{currentPersona.profile.employment}</span>
+                <span className="font-semibold text-gray-400 min-w-24">Employment:</span>
+                <span className="text-gray-200">{currentPersona.profile.employment}</span>
               </div>
               <div className="flex gap-2">
-                <span className="font-semibold text-slate-600 min-w-24">Lifestyle:</span>
-                <span className="text-slate-800">{currentPersona.profile.lifestyle}</span>
+                <span className="font-semibold text-gray-400 min-w-24">Lifestyle:</span>
+                <span className="text-gray-200">{currentPersona.profile.lifestyle}</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="font-bold text-slate-800 mb-3">Pain Points</h3>
+            <h3 className="font-bold text-white mb-3">Pain Points</h3>
             <ul className="space-y-2">
               {currentPersona.profile.painPoints.map((pain, idx) => (
-                <li key={idx} className="text-sm text-slate-700 flex items-start gap-2">
-                  <span className="text-red-500 font-bold">•</span>
+                <li key={idx} className="text-sm text-gray-200 flex items-start gap-2">
+                  <span className="text-[#FF6633] font-bold">•</span>
                   <span>{pain}</span>
                 </li>
               ))}
@@ -94,16 +130,16 @@ const PersonaJourneyMap = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-8 mb-6">
         <button
           onClick={() => setShowCreativeBrief(!showCreativeBrief)}
           className="w-full flex items-center justify-between text-left"
         >
-          <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <Palette className="w-6 h-6 text-purple-600" />
+          <h3 className="text-xl font-bold text-white flex items-center gap-2">
+            <Palette className="w-6 h-6 text-[#FFC238]" />
             Creative Brief & Design Direction
           </h3>
-          <span className="text-2xl text-purple-600">{showCreativeBrief ? '−' : '+'}</span>
+          <span className="text-2xl text-[#FFC238]">{showCreativeBrief ? '−' : '+'}</span>
         </button>
 
         {showCreativeBrief && (
@@ -277,16 +313,16 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-8 mb-6">
         <button
           onClick={() => setShowJourney(!showJourney)}
           className="w-full flex items-center justify-between text-left mb-6"
         >
-          <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <Clock className="w-6 h-6 text-blue-600" />
+          <h3 className="text-xl font-bold text-white flex items-center gap-2">
+            <Clock className="w-6 h-6 text-[#375CFB]" />
             Daily Journey Map
           </h3>
-          <span className="text-2xl text-blue-600">{showJourney ? '−' : '+'}</span>
+          <span className="text-2xl text-[#375CFB]">{showJourney ? '−' : '+'}</span>
         </button>
 
         {showJourney && (
@@ -432,7 +468,7 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg shadow-lg p-8 mt-6 text-white">
+      <div className="bg-gradient-to-r from-[#375CFB] to-[#0c39c8] border border-[#375CFB]/30 rounded-2xl shadow-2xl p-8 mt-6 text-white">
         <button
           onClick={() => setShowBudget(!showBudget)}
           className="w-full flex items-center justify-between text-left mb-6"
@@ -607,7 +643,7 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg shadow-lg p-8 mt-6 text-white">
+      <div className="bg-gradient-to-r from-[#FF6633] to-[#FFC238] border border-[#FFC238]/30 rounded-2xl shadow-2xl p-8 mt-6 text-white">
         <button
           onClick={() => setShowScience(!showScience)}
           className="w-full flex items-center justify-between text-left mb-6"
@@ -767,16 +803,16 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8 mt-6">
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-8 mt-6">
         <button
           onClick={() => setShowProduction(!showProduction)}
           className="w-full flex items-center justify-between text-left mb-6"
         >
-          <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <Video className="w-6 h-6 text-indigo-600" />
+          <h3 className="text-xl font-bold text-white flex items-center gap-2">
+            <Video className="w-6 h-6 text-[#375CFB]" />
             Production Priorities & File Delivery
           </h3>
-          <span className="text-2xl text-indigo-600">{showProduction ? '−' : '+'}</span>
+          <span className="text-2xl text-[#375CFB]">{showProduction ? '−' : '+'}</span>
         </button>
 
         {showProduction && (
@@ -865,7 +901,7 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-lg p-8 mt-6 text-white">
+      <div className="bg-gradient-to-r from-[#0c39c8] to-[#021964] border border-[#375CFB]/30 rounded-2xl shadow-2xl p-8 mt-6 text-white">
         <button
           onClick={() => setShowImplementation(!showImplementation)}
           className="w-full flex items-center justify-between text-left mb-6"
@@ -978,8 +1014,13 @@ const PersonaJourneyMap = () => {
         )}
       </div>
 
-      <div className="text-center text-sm text-slate-500 mt-8">
-        <p>📊 Research-backed recommendations based on neuroscience, behavioral psychology, and industry studies</p>
+      {/* Footer */}
+      <div className="mt-8 border-t border-white/10 pt-6">
+        <div className="text-center">
+          <p className="text-sm text-gray-400 mb-2">📊 Research-backed recommendations based on neuroscience, behavioral psychology, and industry studies</p>
+          <p className="text-xs text-gray-500">© {new Date().getFullYear()} Rebel iQ. All Rights Reserved. Confidential and Proprietary.</p>
+        </div>
+      </div>
       </div>
     </div>
   );
