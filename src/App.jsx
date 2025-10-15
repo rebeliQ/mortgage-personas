@@ -26,9 +26,9 @@ const PersonaJourneyMap = () => {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
-              src="https://rebeliq.com/wp-content/uploads/2024/04/rebel-iQ-logo-light.svg"
+              src="https://start.leadpops.com/hubfs/Leadpops%2BRebeliQ_Color@2x.png?width=860&t=1682946041202"
               alt="Rebel iQ"
-              className="h-8"
+              className="h-10"
             />
             <div className="h-8 w-px bg-white/30"></div>
             <h1 className="text-xl font-bold text-white">Mortgage Persona Journey Maps</h1>
